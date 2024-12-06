@@ -11,6 +11,6 @@ A classic Tic-Tac-Toe (X and O) game that can be played against a friend with a 
 - HTML
 - CSS
   
-##Demo
+## Demo
 ![image](https://github.com/user-attachments/assets/a6950cf8-9801-4321-ae67-e69f273252ba)
 
