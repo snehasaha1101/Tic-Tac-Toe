@@ -28,7 +28,6 @@ body{
     border: none;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
     font-size: 8vmin;
-    color:brown
 }
 #reset-btn{
     padding: 1rem;
@@ -55,4 +54,16 @@ body{
 }
 .hide{
     display: none;
+}
+.playerX {
+    color: #d9534f; /* Red for X */
+}
+
+.playerO {
+    color: #5bc0de; /* Blue for O */
+}
+.winning-box {
+    background-color: rgba(184, 13, 236, 0.3); /* Light purple highlight */
+    border: 2px solid rgb(184, 13, 236); /* Purple border */
+    transition: background-color 0.3s ease, border 0.3s ease;
 }
