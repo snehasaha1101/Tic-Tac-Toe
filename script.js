@@ -21,9 +21,11 @@ boxes.forEach((box)=>{
         if(turnO){
             box.innerText="O";
             turnO=false;
+            box.classList.add("playerO");
         }else{
             box.innerText="X";
             turnO=true;
+            box.classList.add("playerX");
         }
         box.disabled=true;//to prevent multiple clicks on the same button
         checkWinner();//function to check winner after each move
@@ -40,6 +42,12 @@ const enableBoxes=()=>{
         box.innerText="";
     }
 }
+const highlightWinningBoxes = (pattern) => {
+    pattern.forEach((index) => {
+        boxes[index].classList.add("winning-box");
+    });
+};
+
 const showWinner=(winner)=>{
     msg.innerText=`Congratulations! Winner is Player ${winner}`;
     msgContainer.classList.remove("hide");
@@ -54,8 +62,13 @@ const checkWinner=()=>{
             if(pos1Val==pos2Val &&pos2Val==pos3Val){
                 disableBoxes();
                 showWinner(pos1Val);
+                highlightWinningBoxes(pattern);
+                winnerFound = true;
+                break;
             }
-    }   
+    }
+    if (!winnerFound) checkDraw();
+   
 }
 const resetGame=()=>{
     turnO=true;
