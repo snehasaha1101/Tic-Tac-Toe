@@ -72,14 +72,17 @@ const checkWinner=()=>{
                 showWinner(pos1Val);
                 highlightWinningBoxes(pattern);
                 winnerFound = true;
-                break;
-            }
-    };
-    if (!winnerFound) {
+                return; 
+            }    
+    } 
+    const allBoxesFilled = Array.from(boxes).every((box) => box.innerText !== "");
+    if (allBoxesFilled && !winnerFound) {
+        disableBoxes();
         showDraw();
     }
-   
-}
+    
+};
+
 const resetGame=()=>{
     turnO=true;
     enableBoxes();
